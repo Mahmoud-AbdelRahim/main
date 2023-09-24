@@ -1,4 +1,5 @@
 def gv
+
 pipeline {
     agent any
 
@@ -7,7 +8,9 @@ pipeline {
         stage('init') {
                steps {
                  script {
-                    gv = load "script.groovy"
+                    //gv = load "script.groovy"
+                     echo "Testing The App"
+                      echo "Executing pipeline into branch $BRANCH_NAME"
                  }
                }
         }
@@ -20,7 +23,12 @@ pipeline {
                }
              }
              script {
-                gv.TestApp()
+               // gv.TestApp()
+               echo "Building the App from branch $BRANCH_NAME"
+                 sh 'cd /var/jenkins_home/workspace/Hima-Task/'
+                 sh 'npx ci'
+                 sh 'npx turbo serve'
+
              }
            }
         }
@@ -33,7 +41,8 @@ pipeline {
             }
             steps {
                 script {
-                  gv.BuildApp()
+                 // gv.BuildApp()
+                 echo "Deploying Branch $BRANCH_NAME"
                 }
             }
         }
