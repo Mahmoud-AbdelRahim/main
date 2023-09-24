@@ -13,9 +13,9 @@ pipeline {
         }
 
         stage('Build') {
-            when {
-               BRANCH_NAME == 'main'
-            }
+           // when {
+           //    BRANCH_NAME == 'main'
+           // }
 
             steps {
                 script {
@@ -27,9 +27,9 @@ pipeline {
         }
 
         stage('Deploy') {
-            when {
-               BRANCH_NAME == 'main'
-            }
+            // when {
+            //   BRANCH_NAME == 'main'
+            // }
             steps {
                 script {
                     echo "Deploying Branch $BRANCH_NAME"
