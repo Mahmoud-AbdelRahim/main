@@ -3,37 +3,49 @@ pipeline {
 
     stages
     {
+        stage('init') {
+               steps {
+                 script {
+                    gv = load "script.groovy"
+                 }
+               }
+        }
+
         stage('Test') {
            steps {
+             when {
+               expression {
+                 BRANCH_NAME == 'main'
+               }
+             }
              script {
-                echo "Testing The App"
-                echo "Executing pipeline into branch $BRANCH_NAME"
+                gv.TestApp()
              }
            }
         }
 
         stage('Build') {
-           // when {
-           //    BRANCH_NAME == 'main'
-           // }
-
+            when {
+              expression {
+                 BRANCH_NAME == 'main'
+              }
+            }
             steps {
                 script {
-                  echo "Building the App from branch $BRANCH_NAME"
-                  sh 'cd /var/jenkins_home/workspace/Hima-Task/'
-                  sh 'npx ci'
-                  sh 'npx turbo serve'
+                  gv.BuildApp()
                 }
             }
         }
 
         stage('Deploy') {
-            // when {
-            //   BRANCH_NAME == 'main'
-            // }
+            when {
+              expression {
+                 BRANCH_NAME == 'main'
+              }
+            }
             steps {
                 script {
-                    echo "Deploying Branch $BRANCH_NAME"
+                   gv.DeployApp()
                 }
             }
         }
