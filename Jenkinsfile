@@ -21,7 +21,7 @@ pipeline {
                 script {
                   echo "Building the App from branch $BRANCH_NAME"
                   sh 'cd /var/jenkins_home/workspace/Hima-Task/'
-                  sh 'ls'
+                  sh 'npx turbo serve'
                 }
             }
         }
