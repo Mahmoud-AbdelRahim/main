@@ -1,0 +1,22 @@
+- install docker 
+sudo apt install docker.io  
+
+- install jenkins container 
+docker run -p 8080:8080 -p 50000:50000 -p 3000:3000 -d \
+-v jenkins_home:/var/jenkins_home \ jenkins/junkins:lts 
+
+--------------------------
+- opening Jenkins (initialization form)
+- ip:8080
+- enter container #docker exec -it #ID bash
+- cat /var/jenkins_home/secrets/initialAdminPassword
+
+- login for first time 
+- install suggested updates
+- create username 
+- Get Ready
+
+- install npm, node inside jenkins container
+sudo apt install npm
+sudo apt install node
+ 

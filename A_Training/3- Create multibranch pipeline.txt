@@ -1,0 +1,11 @@
+- get project from remote repo pushed by me
+https://github.com/Mahmoud-AbdelRahim/NodeJS
+
+- create Jenkinsfile and script.groovy files 
+- push them to remote repo
+- create multibranch pipeline 
+- add get link 
+- add github credentials
+- run multibranch pipeline 
+- Test app using http://localhost:3000
+
