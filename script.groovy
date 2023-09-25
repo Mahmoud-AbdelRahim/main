@@ -13,3 +13,5 @@ def BuildApp () {
 def DeployApp () {
   echo "Deploying Branch $BRANCH_NAME"
 }
+
+return this
