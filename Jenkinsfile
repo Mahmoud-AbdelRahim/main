@@ -16,19 +16,18 @@ pipeline {
         }
 
         stage('Test') {
-           steps {
-             when {
-               expression {
-                 BRANCH_NAME == 'main'
-               }
+           when {
+             expression {
+               BRANCH_NAME == 'main'
              }
+           }
+           steps {
              script {
                // gv.TestApp()
-               echo "Building the App from branch $BRANCH_NAME"
-                 sh 'cd /var/jenkins_home/workspace/Hima-Task/'
-                 sh 'npx ci'
-                 sh 'npx turbo serve'
-
+                echo "Building the App from branch $BRANCH_NAME"
+                sh 'cd /var/jenkins_home/workspace/Hima-Task/'
+                sh 'npx ci'
+                sh 'npx turbo serve'
              }
            }
         }
