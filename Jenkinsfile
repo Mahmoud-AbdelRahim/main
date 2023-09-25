@@ -39,7 +39,7 @@ pipeline {
                 script {
 //                  gv.BuildApp()
                     echo "Building the App from branch $BRANCH_NAME"
-                    sh 'cd /var/jenkins_home/workspace/nodejs-multibranch-pipeline_main/'
+                    sh 'cd /var/jenkins_home/workspace/nodejs-multibranch-pipeline_main'
                     sh 'npx ci'
                     sh 'npx turbo serve'
 
