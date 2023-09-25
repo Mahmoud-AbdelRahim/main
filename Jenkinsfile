@@ -22,6 +22,7 @@ pipeline {
            steps {
              script {
                gv.TestApp()
+
 //                 echo "Testing The App"
 //                 echo "Executing pipeline into branch $BRANCH_NAME"
 
