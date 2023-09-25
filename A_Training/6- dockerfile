@@ -1,0 +1,7 @@
+From node:20-alpine
+
+RUN mkdir -p /var/jenkins_home/workspace/nodejs-multibranch-pipeline_main/App
+RUN cp . /var/jenkins_home/workspace/nodejs-multibranch-pipeline_main/ /var/jenkins_home/workspace/nodejs-multibranch-pipeline_main/App
+
+EXPOSE 3000
+CMD ["npm", "run", "start"]
