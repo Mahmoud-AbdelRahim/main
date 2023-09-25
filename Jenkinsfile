@@ -8,9 +8,7 @@ pipeline {
         stage('init') {
                steps {
                  script {
-                    //gv = load "script.groovy"
-                     echo "Testing The App"
-                      echo "Executing pipeline into branch $BRANCH_NAME"
+                    gv = load "script.groovy"
                  }
                }
         }
@@ -23,11 +21,7 @@ pipeline {
            }
            steps {
              script {
-               // gv.TestApp()
-                echo "Building the App from branch $BRANCH_NAME"
-                sh 'cd /var/jenkins_home/workspace/Hima-Task/'
-                sh 'npx ci'
-                sh 'npx turbo serve'
+               gv.TestApp()
              }
            }
         }
@@ -40,8 +34,7 @@ pipeline {
             }
             steps {
                 script {
-                 // gv.BuildApp()
-                 echo "Deploying Branch $BRANCH_NAME"
+                  gv.BuildApp()
                 }
             }
         }
