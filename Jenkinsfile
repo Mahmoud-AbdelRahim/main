@@ -21,9 +21,9 @@ pipeline {
            }
            steps {
              script {
-//               gv.TestApp()
-                 echo "Testing The App"
-                 echo "Executing pipeline into branch $BRANCH_NAME"
+               gv.TestApp()
+//                 echo "Testing The App"
+//                 echo "Executing pipeline into branch $BRANCH_NAME"
 
              }
            }
@@ -37,11 +37,11 @@ pipeline {
             }
             steps {
                 script {
-//                  gv.BuildApp()
-                    echo "Building the App from branch $BRANCH_NAME"
-                    sh 'cd /var/jenkins_home/workspace/nodejs-multibranch-pipeline_main'
+                  gv.BuildApp()
+//                    echo "Building the App from branch $BRANCH_NAME"
+//                    sh 'cd /var/jenkins_home/workspace/nodejs-multibranch-pipeline_main'
 //                    sh 'npx ci'
-                    sh 'npx turbo serve'
+//                    sh 'npx turbo serve'
 
                 }
             }
@@ -55,8 +55,8 @@ pipeline {
             }
             steps {
                 script {
-//                   gv.DeployApp()
-                     echo "Deploying Branch $BRANCH_NAME"
+                   gv.DeployApp()
+//                     echo "Deploying Branch $BRANCH_NAME"
 
                 }
             }
