@@ -54,7 +54,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
